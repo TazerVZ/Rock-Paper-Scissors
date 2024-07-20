@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  background: linear-gradient(to top left, #121215, #4c2649);
+}
+
+img {
+  max-width: 60%;
+  height: auto;
+  margin-top: 5rem;
+}
+
+h1 {
+  font-size: 6rem;
+  font-family: "Josefin Sans", sans-serif;
+  margin-top: 4rem;
+}
+
+.btn {
+  position: relative;
+  padding: 3.5rem 6rem;
+  font-size: 3rem;
+  font-weight: 900;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background: #000;
+  overflow: hidden; /* Hide overflow to contain child elements */
+  cursor: pointer;
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./images/Background.jpg);
+  background-size: cover; 
+  background-position: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity .7s ease; /* Transition for opacity */
+  z-index: -1;
+}
+
+.btn:hover::before {
+  opacity: 1; /* Fade in on hover */
+}
+
+
+.restart {
+  width: 30rem;
+  height: 12rem;
+  position: relative;
+  bottom: 1.5rem;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: rgba(2, 2, 2, 0.35);
+  font-size: 3rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600;
+  box-shadow: 2px 2px 15px #000;
+}
+
+.restart:hover {
+  background-color: #020202a6;
+  box-shadow: -2px -2px 15px #000;
+}
+
+.restart:active {
+  color: rgb(221, 221, 221);
+}
+
+/* LAYOUT */
+.main {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 5rem;
+  width: 140rem;
+  height: 80rem;
+}
+
+.card {
+  flex: 50%;
+  flex-direction: column;
+  align-items: center;
+  height: 60rem;
+  border-radius: 1rem;
+  margin: 2rem;
+  background: #ffffff;
+  color: black;
+}
+
+.player-card {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.comp-choice-img {
+  position: relative;
+  top: 10rem;
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+  top: 3rem;
+  font-weight: 400;
+}
+
+.message {
+  padding: 3rem;
+  font-size: 4rem;
+  background-color: rgba(2, 2, 2, 0.55);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  margin-top: 3rem;
+  margin-bottom: 3.38rem;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+
+  background-color: white;
+  color: black;
+  font-size: 7rem;
+  font-family: "Josefin Sans", sans-serif;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
